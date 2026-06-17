@@ -88,22 +88,17 @@ cp -r memory/ your-project/memory/
 
 ### 3. Setup business context
 
-Edit `memory/project.md`:
+Edit `memory/project.md` — **bắt buộc trước khi implement**:
 
-```markdown
-## Project Overview
-| Field | Value |
-|-------|-------|
-| Name | [Tên dự án của bạn] |
-| Domain | [Lĩnh vực] |
+| Field P0 | Ví dụ |
+|----------|-------|
+| Name, Domain, Phase | CafeFlow / F&B / Development |
+| Problem Statement | Ghi order giấy, đối soát Excel lâu |
+| Target Users | Chủ quán, nhân viên quầy |
+| Tech Stack | React, Node, PostgreSQL (hoặc `TBD` nếu chưa chốt) |
+| Human Owners | Ai duyệt business / technical |
 
-## Business Context
-### Problem Statement
-[Vấn đề đang giải quyết]
-
-### Target Users
-[Ai dùng]
-```
+> **Nếu chưa điền:** AI sẽ **hỏi từng câu** — không tự đoán domain, stack hay user. Gõ `/sm-discovery` hoặc `@sm-discovery` để điền có hướng dẫn.
 
 ### 4. Bắt đầu với AI
 

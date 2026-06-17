@@ -3,6 +3,31 @@
 > Agent đọc file này **đầu tiên** mỗi session.
 > Không cần đọc lại toàn bộ kit nếu đã có đủ context ở đây.
 
+<!-- AGENT_PROTOCOL: project.md
+Nếu field BẮT BUỘC còn placeholder → DỪNG implement, HỎI user. KHÔNG đoán, KHÔNG fill mặc định.
+
+Field bắt buộc (P0 — thiếu 1 là chưa setup):
+- Project Overview: Name, Domain, Phase
+- Problem Statement
+- Target Users (≥1 role có mô tả thật)
+- Tech Stack: Frontend, Backend, Database (TBD được — nhưng phải hỏi user confirm)
+- Human Owners: Business/Product, Technical
+
+Dấu hiệu CHƯA điền (coi như trống):
+- Comment `DISCOVERY_FILL_HERE`
+- Placeholder dạng `[Tên dự án]`, `[Role 1]`, `[Vấn đề...]`
+- Ô bảng trống hoặc chỉ có example trong comment HTML
+- Giá trị generic: `TBD`, `N/A`, `TODO` mà user chưa confirm trong session
+
+Hành vi khi trống:
+1. Liệt kê field P0 còn thiếu
+2. Hỏi từng câu cụ thể — không assume domain/stack/users
+3. Gợi ý `@sm-discovery` / `/sm-discovery` nếu mới bắt đầu dự án
+4. Chỉ implement sau khi user trả lời HOẶC ghi rõ vào file này
+
+Được phép: ghi `TBD` + lý do **sau khi user nói "chưa chốt"** — không tự ghi TBD thay user.
+-->
+
 ## Project Overview
 
 | Field | Value |

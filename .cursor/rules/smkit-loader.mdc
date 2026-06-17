@@ -11,8 +11,9 @@ alwaysApply: true
 ## Session start
 
 1. `memory/project.md` — BẮT BUỘC
-2. `memory/session.md` — nếu có task dở
-3. `smkit/rules/00-core.md` — BẮT BUỘC
+2. Field P0 trống? → **HỎI user**, không đoán (xem `smkit/rules/00-core.md`)
+3. `memory/session.md` — nếu có task dở
+4. `smkit/rules/00-core.md` — BẮT BUỘC
 
 ## Rules (đọc khi cần)
 

@@ -254,8 +254,9 @@ Trigger khi có ÍT NHẤT 1:
 
 ```
 1. Đọc memory/project.md     ← BẮT BUỘC
-2. Đọc memory/session.md     ← Nếu có task dở
-3. [Chỉ khi cần] Đọc thêm
+2. Kiểm tra field P0 đã điền? ← Thiếu → HỎI user, KHÔNG đoán (xem 00-core.md)
+3. Đọc memory/session.md   ← Nếu có task dở
+4. [Chỉ khi cần] Đọc thêm
 ```
 
 ---

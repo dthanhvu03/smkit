@@ -76,6 +76,22 @@ AI Agent **không phải** decision maker cuối cùng.
 | Chốt quyết định | `decisions.md` |
 | Nhận feedback | `learnings.md` |
 
+### `project.md` trống — HỎI, không đoán
+
+Sau khi đọc `memory/project.md`, kiểm tra **field P0** (Name, Domain, Phase, Problem Statement, Target Users, Tech Stack, Human Owners).
+
+**Coi là chưa điền** nếu còn: `DISCOVERY_FILL_HERE`, placeholder `[...]`, ô trống, hoặc giá trị user chưa confirm trong session.
+
+| Tình huống | Hành vi |
+|------------|---------|
+| Thiếu ≥1 field P0 | **DỪNG** — liệt kê thiếu gì, hỏi user từng câu. Không implement, không chọn stack/domain giúp user |
+| User nói "chưa chốt stack" | Ghi `TBD` **sau khi user confirm** — không tự điền |
+| Dự án mới, hầu hết trống | Gợi ý `@sm-discovery` / `/sm-discovery *fill` |
+| Đủ P0 | Tiếp tục task bình thường |
+
+❌ **Cấm:** assume tên dự án, domain, user persona, tech stack từ tên folder repo hoặc file code có sẵn.
+✅ **Đúng:** *"Để tiếp tục, cần biết: [1] Tên dự án? [2] Domain? [3] Ai là user chính?"*
+
 ---
 
 ## Conflict Resolution
