@@ -45,7 +45,7 @@ Run install.ps1 from a cloned SMKit repo, or install git for remote bootstrap.
 "@
     }
 
-    $repoUrl = if ($env:SMKIT_REPO_URL) { $env:SMKIT_REPO_URL } else { "https://github.com/YOUR_ORG/smkit.git" }
+    $repoUrl = if ($env:SMKIT_REPO_URL) { $env:SMKIT_REPO_URL } else { "https://github.com/dthanhvu03/smkit.git" }
     $cloneDir = Join-Path $env:TEMP ("smkit-src-" + [guid]::NewGuid().ToString("n").Substring(0, 8))
 
     Write-Info "Cloning SMKit from $repoUrl ..."

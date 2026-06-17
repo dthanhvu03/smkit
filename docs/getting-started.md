@@ -46,7 +46,19 @@ your-project/
 
 ## Quick Start
 
-### 0. Cài SMKit vào dự án (khuyến nghị)
+### 0. Clone SMKit
+
+```bash
+git clone https://github.com/dthanhvu03/smkit.git
+cd smkit
+```
+
+```powershell
+git clone https://github.com/dthanhvu03/smkit.git
+cd smkit
+```
+
+### 1. Cài SMKit vào dự án (khuyến nghị)
 
 ```powershell
 # Windows - từ repo SMKit
@@ -65,7 +77,7 @@ chmod +x install.sh && ./install.sh
 
 Xem [README.md](../README.md) cho one-liner remote install.
 
-### 1. Clone/Copy SMKit vào project (thủ công)
+### 2. Clone/Copy SMKit vào project (thủ công)
 
 ```bash
 # Copy smkit folder vào project của bạn
@@ -74,7 +86,7 @@ cp AGENTS.md your-project/
 cp -r memory/ your-project/memory/
 ```
 
-### 2. Setup business context
+### 3. Setup business context
 
 Edit `memory/project.md`:
 
@@ -93,7 +105,7 @@ Edit `memory/project.md`:
 [Ai dùng]
 ```
 
-### 3. Bắt đầu với AI
+### 4. Bắt đầu với AI
 
 **Prompt đầu tiên:**
 

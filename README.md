@@ -4,6 +4,20 @@
 
 Framework platform-agnostic giúp AI Agent hiểu nghiệp vụ trước, tư duy hệ thống / rủi ro / phản biện, và nhớ context qua `memory/`.
 
+**Repository:** https://github.com/dthanhvu03/smkit
+
+## Clone
+
+```bash
+git clone https://github.com/dthanhvu03/smkit.git
+cd smkit
+```
+
+```powershell
+git clone https://github.com/dthanhvu03/smkit.git
+cd smkit
+```
+
 ## Cài đặt 1 dòng
 
 ### Windows (PowerShell)
@@ -12,9 +26,8 @@ Framework platform-agnostic giúp AI Agent hiểu nghiệp vụ trước, tư du
 # Từ repo đã clone
 .\install.ps1
 
-# Remote (cần git + set URL repo thật)
-$env:SMKIT_REPO_URL = "https://github.com/YOUR_ORG/smkit.git"
-iwr -useb https://raw.githubusercontent.com/YOUR_ORG/smkit/main/install.ps1 | iex
+# Remote — không cần clone trước (cần git)
+iwr -useb https://raw.githubusercontent.com/dthanhvu03/smkit/main/install.ps1 | iex
 ```
 
 ### macOS / Linux
@@ -23,10 +36,11 @@ iwr -useb https://raw.githubusercontent.com/YOUR_ORG/smkit/main/install.ps1 | ie
 # Từ repo đã clone
 chmod +x install.sh && ./install.sh
 
-# Remote (cần git + set URL repo thật)
-export SMKIT_REPO_URL="https://github.com/YOUR_ORG/smkit.git"
-curl -fsSL https://raw.githubusercontent.com/YOUR_ORG/smkit/main/install.sh | bash
+# Remote — không cần clone trước (cần git)
+curl -fsSL https://raw.githubusercontent.com/dthanhvu03/smkit/main/install.sh | bash
 ```
+
+> Override repo URL (fork/private): `$env:SMKIT_REPO_URL` (PowerShell) hoặc `export SMKIT_REPO_URL` (bash).
 
 ### Non-interactive
 

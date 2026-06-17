@@ -55,7 +55,7 @@ initialize_smkit_source() {
     exit 1
   fi
 
-  local repo_url="${SMKIT_REPO_URL:-https://github.com/YOUR_ORG/smkit.git}"
+  local repo_url="${SMKIT_REPO_URL:-https://github.com/dthanhvu03/smkit.git}"
   local clone_dir
   clone_dir="$(mktemp -d "${TMPDIR:-/tmp}/smkit-src.XXXXXX")"
 
