@@ -175,6 +175,24 @@ function Write-InstallManifest {
     Write-Ok "CREATE: .smkit/install.json"
 }
 
+function Setup-ClaudeIntegration {
+    param(
+        [string]$Source,
+        [string]$Target
+    )
+
+    $claudeSource = Join-Path $Source ".claude"
+    if (-not (Test-Path $claudeSource)) {
+        Write-Warn ".claude source not found - skip Claude Code integration."
+        return
+    }
+
+    Write-Info "Setting up .claude/ (slash command pointers)..."
+    $claudeCopied = 0
+    $claudeSkipped = 0
+    Copy-TreeNoOverwrite -Source $claudeSource -Destination (Join-Path $Target ".claude") -CopiedRef ([ref]$claudeCopied) -SkippedRef ([ref]$claudeSkipped)
+}
+
 function Setup-CursorIntegration {
     param(
         [string]$Source,
@@ -323,6 +341,7 @@ else {
 Set-ProjectMode -ProjectFile $projectMdPath -SelectedMode $Mode -WasCopied $projectMdCopied
 Write-InstallManifest -Target $TargetDir -SelectedMode $Mode
 Setup-CursorIntegration -Source $SourceDir -Target $TargetDir
+Setup-ClaudeIntegration -Source $SourceDir -Target $TargetDir
 
 Write-Host ""
 Write-Info "Install summary: copied=$totalCopied skipped=$totalSkipped"
@@ -332,6 +351,7 @@ Write-Host "  1. cd `"$TargetDir`""
 Write-Host "  2. Edit memory/project.md - dien ten du an, business context"
 Write-Host "  3. Mo Cursor hoac chay: claude"
 Write-Host "  4. Prompt dau tien: Doc AGENTS.md va memory/project.md"
+Write-Host "  5. Claude Code: /sm-help | Cursor: @sm-backend, @sm-discovery..."
 Write-Host ""
 if ($Mode -eq "full") {
     Write-Host "  Full mode: xem docs/getting-started.md"

@@ -61,6 +61,7 @@ curl -fsSL https://raw.githubusercontent.com/dthanhvu03/smkit/main/install.sh | 
 | Copy | `smkit/`, `memory/`, `project-docs/`, `AGENTS.md`, `CLAUDE.md` |
 | Skip | **Không ghi đè** file đã tồn tại — cảnh báo + bỏ qua |
 | Cursor | Copy `.cursor/` loader + pointers; junction/symlink `.cursor/smkit-rules` |
+| Claude Code | Copy `.claude/commands/` slash command pointers (lightweight + full) |
 | Git check | Cảnh báo nếu target không phải git repo |
 
 **Idempotent:** chạy lại nhiều lần an toàn.
@@ -72,13 +73,14 @@ curl -fsSL https://raw.githubusercontent.com/dthanhvu03/smkit/main/install.sh | 
 2. Sửa memory/project.md — điền business context
 3. Mở Cursor hoặc chạy: claude
 4. Prompt: Đọc AGENTS.md và memory/project.md
+5. Trong Claude Code, gõ /sm-help để xem menu lệnh. Trong Cursor, dùng @sm-backend, @sm-discovery...
 ```
 
 ## Mode
 
 | Mode | Cài gì |
 |------|--------|
-| **lightweight** | Core: smkit, memory, project-docs, AGENTS.md, CLAUDE.md, .cursor |
+| **lightweight** | Core: smkit, memory, project-docs, AGENTS.md, CLAUDE.md, .cursor, .claude |
 | **full** | Lightweight + `artifacts/`, `docs/` |
 
 ## Cấu trúc sau install
@@ -91,6 +93,7 @@ your-project/
 ├── smkit/
 ├── project-docs/
 ├── .cursor/          # Cursor integration
+├── .claude/          # Claude Code slash commands
 ├── .smkit/install.json
 └── artifacts/        # full mode only
 ```

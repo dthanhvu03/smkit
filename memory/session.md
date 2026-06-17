@@ -6,47 +6,52 @@
 
 | Field | Value |
 |-------|-------|
-| Started | |
-| Task ID | |
-| Status | `in_progress` / `blocked` / `waiting_review` / `done` |
+| Started | 2026-06-17 |
+| Task ID | PROMPT-7-claude-slash-commands |
+| Status | `done` |
 
 ## Current Task
 
 ### Goal
 
-[Mô tả ngắn task đang làm]
+Tạo `.claude/commands/` — 13 slash command pointer cho Claude Code (v2.4), song song `.cursor/skills/`.
 
 ### Progress
 
-- [x] Step 1
-- [ ] Step 2
-- [ ] Step 3
+- [x] 13 file `.claude/commands/sm-*.md`
+- [x] AGENTS.md — File Map, Phân biệt, Platform Integration, Changelog v2.4
+- [x] README.md — bước /sm-help, mode lightweight + .claude
+- [x] install.ps1 + install.sh — copy `.claude/commands/`
+- [x] Test grep: 10 reference `smkit/skills` trong role files, 13 files total
+- [ ] Manual test Claude Code: `/sm-help`, `/sm-backend *endpoint`
 
 ### Files touched
 
-- `path/to/file1.ts` — [mô tả thay đổi]
-- `path/to/file2.ts` — [mô tả thay đổi]
+- `.claude/commands/sm-*.md` (13 files) — slash command pointers
+- `AGENTS.md` — v2.4 docs
+- `README.md` — post-install step 5
+- `install.ps1`, `install.sh` — Setup-ClaudeIntegration
 
 ### Decisions made this session
 
-- [Decision 1]
-- [Decision 2]
+- Pointer pattern giống `.cursor/skills/` — không duplicate nội dung skill
+- Lightweight + full mode đều copy `.claude/`
 
 ## Blockers
 
 | Blocker | Waiting for | Priority |
 |---------|-------------|----------|
-| | | |
+| Manual Claude Code slash menu test | User verify trong Claude Code | Low |
 
 ## Notes
 
-[Ghi chú thêm]
+Codacy CLI chưa cài trên máy — phân tích tự động bỏ qua.
 
 ## Next Steps
 
-1. [Step 1]
-2. [Step 2]
+1. User test `/sm-help` và `/sm-backend *endpoint` trong Claude Code
+2. Commit nếu OK (message gợi ý trong task brief)
 
 ---
 
-*Last updated: [timestamp]*
+*Last updated: 2026-06-17*

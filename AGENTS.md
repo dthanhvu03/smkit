@@ -36,12 +36,14 @@ Root repo
 │   ├── requirements.md          ← Yêu cầu
 │   └── schema.md                ← Data model
 ├── artifacts/                   ← Output từng task (runtime)
-└── .cursor/                     ← CHỈ Cursor: loader + pointer skills
-    ├── rules/smkit-loader.mdc
-    └── skills/*/SKILL.md        ← Trỏ về smkit/skills/, không copy nội dung
+├── .cursor/                     ← CHỈ Cursor: loader + pointer skills
+│   ├── rules/smkit-loader.mdc
+│   └── skills/*/SKILL.md        ← Trỏ về smkit/skills/, không copy nội dung
+└── .claude/                     ← CHỈ Claude Code: slash command pointers
+    └── commands/sm-*.md         ← Trỏ về smkit/skills/, không copy nội dung
 ```
 
-**Nguyên tắc:** Không duplicate nội dung. `smkit/` = source. `.cursor/` = integration pointer.
+**Nguyên tắc:** Không duplicate nội dung. `smkit/` = source. `.cursor/` và `.claude/` = integration pointer.
 
 ---
 
@@ -68,6 +70,7 @@ Root repo
 | `artifacts/{Task-ID}/` | Output cụ thể từng task | Agent tạo |
 | `.cursor/rules/smkit-loader.mdc` | Cursor auto-inject → trỏ smkit | Kit |
 | `.cursor/skills/*/SKILL.md` | Cursor @mention → trỏ smkit/skills | Kit |
+| `.claude/commands/sm-*.md` | Claude Code slash command → trỏ smkit/skills | Kit |
 | `docs/getting-started.md` | Hướng dẫn cho **người** (không phải agent) | Kit |
 | `docs/mcp-integration.md` | MCP setup cho Claude Code / Cursor — workflow mapping | Kit |
 
@@ -80,6 +83,7 @@ Root repo
 | `memory/decisions.md` vs `project-docs/decisions.md` | Log timeline vs Baseline kiến trúc |
 | `memory/project.md` vs `project-docs/*` | Snapshot ngắn vs SoT chi tiết |
 | `smkit/skills/` vs `.cursor/skills/` | Nội dung vs Pointer |
+| `.claude/commands/` vs `.cursor/skills/` | Claude Code (`/sm-*`) vs Cursor (`@sm-*`) — cả 2 đều pointer |
 | `AGENTS.md` vs `docs/getting-started.md` | Cho agent vs Cho human |
 
 ---
@@ -313,6 +317,8 @@ Prompt đầu tiên:
 "Đọc AGENTS.md ở root repo. Tuân thủ smkit/rules/ trước khi làm bất kỳ task nào."
 ```
 
+**Claude Code:** dùng slash command `/sm-help` để xem menu, `/sm-{role}` để invoke. Tự động đọc skill thật từ `smkit/`.
+
 ### API / Automation
 
 ```
@@ -344,6 +350,7 @@ Sau mỗi task:
 
 | Version | Thay đổi |
 |---------|----------|
+| v2.4 | **Claude Code slash commands:** `.claude/commands/sm-*` (pointer pattern, song song `.cursor/skills/`) |
 | v2.3 | **MCP integration guide:** `docs/mcp-integration.md` + `mcp.json.example` |
 | v2.2 | **Skill personas + commands:** `@sm-* *help` pattern, bảng vai trò có Persona + Key Commands |
 | v2.1 | **Lean structure:** bỏ duplicate, 1 file = 1 vai trò, `.cursor/` chỉ pointer |

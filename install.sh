@@ -192,6 +192,22 @@ EOF
   ok "CREATE: .smkit/install.json"
 }
 
+setup_claude_integration() {
+  local source="$1"
+  local target="$2"
+  local claude_src="$source/.claude"
+
+  if [[ ! -d "$claude_src" ]]; then
+    warn ".claude source not found — skip Claude Code integration."
+    return
+  fi
+
+  info "Setting up .claude/ (slash command pointers)..."
+  copy_tree_no_overwrite "$claude_src" "$target/.claude"
+  TOTAL_COPIED=$((TOTAL_COPIED + LAST_COPIED))
+  TOTAL_SKIPPED=$((TOTAL_SKIPPED + LAST_SKIPPED))
+}
+
 setup_cursor_integration() {
   local source="$1"
   local target="$2"
@@ -311,6 +327,7 @@ fi
 set_project_mode "$TARGET_DIR/memory/project.md" "$MODE" "$PROJECT_MD_COPIED"
 write_install_manifest "$TARGET_DIR" "$MODE"
 setup_cursor_integration "$SOURCE_DIR" "$TARGET_DIR"
+setup_claude_integration "$SOURCE_DIR" "$TARGET_DIR"
 
 printf '\n'
 info "Install summary: copied=$TOTAL_COPIED skipped=$TOTAL_SKIPPED"
@@ -320,6 +337,7 @@ echo "  1. cd \"$TARGET_DIR\""
 echo "  2. Edit memory/project.md — điền tên dự án, business context"
 echo "  3. Mở Cursor hoặc chạy: claude"
 echo "  4. Prompt đầu tiên: Đọc AGENTS.md và memory/project.md"
+echo "  5. Claude Code: /sm-help | Cursor: @sm-backend, @sm-discovery..."
 printf '\n'
 if [[ "$MODE" == "full" ]]; then
   echo "  Full mode: xem docs/getting-started.md để biết workflow đầy đủ."
