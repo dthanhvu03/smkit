@@ -25,12 +25,15 @@ Thumbs.db
 dist/
 build/
 *.log
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
 
 # Artifacts - keep folder but ignore content except README
 artifacts/*
 !artifacts/README.md
 !artifacts/.gitkeep
 
-
-#Ignore cursor AI rules
-.cursor\rules\codacy.mdc
+# Cursor AI rules (local)
+.cursor/rules/codacy.mdc
