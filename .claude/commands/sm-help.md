@@ -16,6 +16,9 @@ In bảng sau ra cho user (đọc AGENTS.md > Vai trò AI Agent để lấy data
 | /sm-qa | Anh Minh — QA Lead | Test, review |
 | /sm-devops | Anh Phong — DevOps Engineer | Deploy, CI/CD |
 | /sm-ba | Chị Lan — Business Analyst | Acceptance criteria |
+| /sm-reviewer | Anh Bình — Senior Reviewer | Review code, smell, risky |
+| /sm-debugger | Chị Vy — Bug Hunter | Debug bug có cấu trúc |
+| /sm-security | Anh Sơn — Security Engineer | OWASP, auth, secret, PII |
 | /sm-check | — | Chạy final checklist của skill ACTIVE |
 | /sm-gate | — | Check Human Gate triggers |
 

@@ -28,7 +28,7 @@ Root repo
 │   └── learnings.md             ← Feedback, lessons
 ├── smkit/                       ← Framework (NỘI DUNG THẬT — duy nhất)
 │   ├── rules/                   ← 8 rules, mỗi rule 1 chủ đề
-│   ├── skills/                  ← 10 vai trò, mỗi skill 1 workflow
+│   ├── skills/                  ← 13 vai trò, mỗi skill 1 workflow
 │   └── templates/               ← Template artifact, copy khi cần
 ├── project-docs/                ← SoT nghiệp vụ (user điền, agent đọc khi cần detail)
 │   ├── business-rules.md        ← Quy tắc nghiệp vụ
@@ -277,8 +277,13 @@ Trigger khi có ÍT NHẤT 1:
 | **QA** | Anh Minh — QA Lead | `*test-plan`, `*bug-report`, `*check` | Test, review | `smkit/skills/qa.md` |
 | **DevOps** | Anh Phong — DevOps Engineer | `*deploy`, `*rollback`, `*check` | Deploy, CI/CD | `smkit/skills/devops.md` |
 | **BA** | Chị Lan — Business Analyst | `*ac`, `*story`, `*check` | Acceptance criteria, docs | `smkit/skills/ba.md` |
+| **Reviewer** | Anh Bình — Senior Reviewer | `*review`, `*smell`, `*risky` | Review code trước merge | `smkit/skills/reviewer.md` |
+| **Debugger** | Chị Vy — Bug Hunter | `*repro`, `*bisect`, `*rca`, `*postmortem` | Debug bug có cấu trúc | `smkit/skills/debugger.md` |
+| **Security** | Anh Sơn — Security Engineer | `*audit`, `*owasp`, `*secret`, `*pii` | OWASP, auth, secret, PII | `smkit/skills/security.md` |
 
 **Commands chung** (mọi skill): `*help` (list commands), `*brief` (template liên quan), `*check` (final checklist).
+
+**Defensive layer:** Reviewer (code quality) → Security (audit sâu) → Debugger (root cause) — bổ sung cho 10 skill build.
 
 ---
 
@@ -350,6 +355,7 @@ Sau mỗi task:
 
 | Version | Thay đổi |
 |---------|----------|
+| v2.5 | **3 defensive skills:** Reviewer, Debugger, Security — bổ sung defensive layer cho 10 skill build hiện có |
 | v2.4 | **Claude Code slash commands:** `.claude/commands/sm-*` (pointer pattern, song song `.cursor/skills/`) |
 | v2.3 | **MCP integration guide:** `docs/mcp-integration.md` + `mcp.json.example` |
 | v2.2 | **Skill personas + commands:** `@sm-* *help` pattern, bảng vai trò có Persona + Key Commands |
