@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "smkit-memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "smkit-filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "YOUR_PROJECT_PATH"]
+    },
+    "smkit-sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "neon": {
+      "url": "https://mcp.neon.tech/mcp"
+    }
+  }
+}

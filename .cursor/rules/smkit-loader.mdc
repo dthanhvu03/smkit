@@ -1,0 +1,37 @@
+---
+description: SMKit Loader — Cursor integration, trỏ về smkit/ (single source of truth)
+globs: 
+alwaysApply: true
+---
+
+# SMKit Loader (Cursor only)
+
+> File này **chỉ** để Cursor auto-inject. Nội dung thật ở `smkit/`.
+
+## Session start
+
+1. `memory/project.md` — BẮT BUỘC
+2. `memory/session.md` — nếu có task dở
+3. `smkit/rules/00-core.md` — BẮT BUỘC
+
+## Rules (đọc khi cần)
+
+| File | Khi nào |
+|------|---------|
+| `00-core.md` | Mọi task |
+| `01-systems-thinking.md` | Assess impact |
+| `02-risk-thinking.md` | Task có rủi ro |
+| `03-critical-thinking.md` | Verify assumptions |
+| `04-business-first.md` | Trước implement |
+| `05-human-gate.md` | Cần approval |
+| `06-data-safety.md` | Đụng data/DB |
+| `07-architecture-envelope.md` | Mutation/API |
+
+## Skills & templates
+
+- Skills: `smkit/skills/` — `.cursor/skills/` chỉ là pointer
+- Templates: `smkit/templates/` — copy sang `artifacts/{Task-ID}/`
+
+## Nguyên tắc
+
+Không SMKit = không làm. Business trước code. Memory trước docs.
